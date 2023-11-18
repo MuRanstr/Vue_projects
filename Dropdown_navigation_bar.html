@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'montserrat', sans-serif;
+        }
+
+        header {
+            width: 100vw;
+            background-color: #222;
+            padding: 15px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        nav .menu-item {
+            color: #fff;
+            padding: 10px 20px;
+            position: relative;
+            text-align: center;
+            border-bottom: 3px solid transparent;
+            display: flex;
+            transition: 0.4s;
+        }
+
+        nav .menu-item a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        nav .menu-item.active,
+        nav .menu-item:hover {
+            background-color: #444;
+            border-bottom-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <nav>
+                <div class="menu-item" href="#" v-for="(value, key) in myObject" :key="key"><a>{{value}}</a></div>
+            </nav>
+        </header>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                myObject: { 1: '主页', 2: '工具', 3: '文档', 4: '登录', 5: '注册' }
+            }
+        })
+    </script>
+</body>
+</html>
